@@ -1,19 +1,51 @@
 using System;
 
 class Cliente{
-  public string Nome;
-  public string Endereço;
+  string Nome;
+  string Endereco;
+  double telefone;
+  double Acesso=123456;
 
-  public void EscolherProduto(string nome, int quantidade){
-    Console.WriteLine("Produto >> {0} - Total >> {1} ", nome, quantidade);
 
+  //SET
+ public void MudaNome(string n, int senha){
+    //RN RESTRITIVA - ACESSO
+    if (senha == Acesso) {
+       Nome = n;
+    }  
+    else{
+      Console.WriteLine("Acesso Negado");
+    }
   }
-
-  public void Pagar(int qtd, double valor){
-    Console.WriteLine(Produto.CalculoTotal(qtd, valor));
-
+  public void MudaEndereco(string n, int senha){
+    //RN RESTRITIVA - ACESSO
+    if (senha == Acesso) {
+       Endereco = n;
+    }  
+    else{
+      Console.WriteLine("Acesso Negado");
+    }
   }
-
-
+  public void MudaTelefone(double c, int senha){
+    //RN RESTRITIVA - ACESSO
+    if (c > 0 && senha == Acesso) {
+       telefone = c;
+    }  
+    else{
+      Console.WriteLine("Valor Invalido");
+    }
+  }
+//GET
+  public string RetornaNome(){
+       return Nome;
+  }
+  //GET
+  public string RetornaEndereco(){
+       return Endereco;
+  }
+  //GET
+  public double RetornaTelefone(){
+       return telefone;
+  }
 
 }

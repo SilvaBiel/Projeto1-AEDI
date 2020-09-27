@@ -23,6 +23,7 @@ class Carrinho{
     }
 //Calcula o valor total de todos os itens no carrinho
   public double CarrinhoTotal (){
+    Console.Write("Senhor(a), este é o total do carrinho ->");
     return ValorTotalDoCarrinho;
   }
 
